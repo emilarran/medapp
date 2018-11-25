@@ -6,6 +6,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { Doctor } from './doctor';
 import { MedicalRecord } from './medical-record';
 import { Patient } from './patient';
+import { Disease } from './disease';
+import { Medicine } from './medicine';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application-json' })
@@ -66,7 +68,6 @@ export class MedService {
     const url = `${this.apiUrl}/${id}`;
 
     return this.http.delete<MedicalRecord>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted medRecord id=${id}`)),
       catchError(this.handleError<MedicalRecord>('deleteMedRecord'))
     );
   }
@@ -76,8 +77,81 @@ export class MedService {
     const url = `${this.apiUrl}/${id}`;
 
     return this.http.delete<Patient>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted patient id=${id}`)),
       catchError(this.handleError<Patient>('deletePatient'))
+    );
+  }
+
+  addDisease(disease: Disease): Observable<Disease> {
+    return this.http.post<Disease>(this.apiUrl, disease, httpOptions).pipe(
+      catchError(this.handleError<Disease>('addDisease'))
+    );
+  }
+
+  updateDisease(disease: Disease): Observable<any> {
+    return this.http.put(this.apiUrl, disease, httpOptions).pipe(
+      catchError(this.handleError<any>('updateDisease'))
+    );
+  }
+
+  deleteDisease(disease: Disease | number): Observable<Disease> {
+    const id = typeof disease === 'number' ? disease: disease.id;
+    const url = `${this.apiUrl}/${id}`;
+
+    return this.http.delete<Disease>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted disease id=${id}`)),
+      catchError(this.handleError<Disease>('deleteDisease'))
+    );
+  }
+
+  getDiseases(): Observable<Disease[]> {
+    return this.http.get<Disease[]>(this.apiUrl).pipe(
+      catchError(this.handleError('getDiseases', []))
+    );
+  }
+
+  addMedicine(medicine: Medicine): Observable<Medicine> {
+    return this.http.post<Medicine>(this.apiUrl, medicine, httpOptions).pipe(
+      catchError(this.handleError<Medicine>('addMedicine'))
+    );
+  }
+
+  updateMedicine(medicine: Medicine): Observable<any> {
+    return this.http.put(this.apiUrl, medicine, httpOptions).pipe(
+      catchError(this.handleError<any>('updateMedicine'))
+    );
+  }
+
+  deleteMedicine(medicine: Medicine | number): Observable<Medicine> {
+    const id = typeof medicine === 'number' ? medicine: medicine.id;
+    const url = `${this.apiUrl}/${id}`;
+
+    return this.http.delete<Medicine>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted medicine id=${id}`)),
+      catchError(this.handleError<Medicine>('deleteMedicine'))
+    );
+  }
+
+  getMedicines(): Observable<Medicine[]> {
+    return this.http.get<Medicine[]>(this.apiUrl).pipe(
+      catchError(this.handleError('getMedicines', []))
+    );
+  }
+
+  getPatients(): Observable<Patient[]> {
+    return this.http.get<Patient[]>(this.apiUrl).pipe(
+      catchError(this.handleError('getPatients', []))
+    );
+  }
+
+  getDoctors(): Observable<Doctor[]> {
+    return this.http.get<Doctor[]>(this.apiUrl).pipe(
+      catchError(this.handleError('getDoctors', []))
+    );
+  }
+
+  getMedRecords(): Observable<MedicalRecord[]> {
+    return this.http.get<MedicalRecord[]>(this.apiUrl).pipe(
+      catchError(this.handleError('getMedRecords', []))
     );
   }
 
