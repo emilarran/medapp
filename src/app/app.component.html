@@ -2,8 +2,8 @@
   <div id="header">
     <h2 style="margin-left:25%;">Tenshi Records</h2>
   </div>
-  <app-navbar *ngIf="loggedIn"></app-navbar>
-  <div id="mainContent" *ngIf="loggedIn">
+  <app-navbar *ngIf="isLoggedIn"></app-navbar>
+  <div id="mainContent" *ngIf="isLoggedIn">
     <a class="btn btn-New" href="#open-modal">
       <div class="functionButtons">
         <i class="material-icons">note_add</i>
@@ -47,5 +47,5 @@
     </div>
 
   </div>
-  <app-login></app-login>
+  <app-login *ngIf="!isLoggedIn"></app-login>
 </div>
