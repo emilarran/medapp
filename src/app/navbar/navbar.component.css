@@ -1,0 +1,28 @@
+#mainNav{
+    background-color: #263047;
+    color:#0C1821;
+    font-weight: bold;
+    font-size: 20px;
+    width:15%;
+    min-height:100%;
+    float:left;
+}
+#menuButton a {
+    font-family: 'Fira Sans', sans-serif;
+    font-size:1em;
+    text-align: center;
+    background-color: #263047;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    display:grid;
+    grid-template-columns: auto;
+}
+#menuButton a:hover{
+    background-color: #3D4E72;
+}
+#menuButton{
+    width:100%;
+}
