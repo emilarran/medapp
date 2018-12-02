@@ -34,8 +34,15 @@
 <!-- THIS PART IS FOR THE MODALS -->
     <div id="NEW-modal" class="modal-window">
       <div>
-        <a href="diseases#" title="Close" class="modal-close" (click)="resetDisease()">Close</a>
-        <div id="contentGoesHere">
+        <a 
+          href="diseases#" 
+          title="Close" 
+          class="modal-close" 
+          (click)="resetDisease()"
+        >
+          <i class="material-icons">clear</i>
+        </a>
+        <div id="contentGoesHere" style="display:grid; grid-template-columns: auto;">
           <h1>NEW</h1>
           <input [(ngModel)]="disease.name" type="text" placeholder="Name"><br>
           <select #selectMedicine>
@@ -48,7 +55,7 @@
 
     <div id="EDIT-modal" class="modal-window">
       <div>
-        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <a href="diseases#" title="Close" class="modal-close"><i class="material-icons">clear</i></a>
         <div id="contentGoesHere">
           <h1>EDIT</h1>
         </div>
@@ -57,7 +64,7 @@
 
     <div id="VIEW-modal" class="modal-window">
       <div>
-        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <a href="diseases#" title="Close" class="modal-close"><i class="material-icons">clear</i></a>
         <div id="contentGoesHere">
           <h1>VIEW</h1>
           <table>
@@ -80,7 +87,7 @@
 
     <div id="DELETE-modal" class="modal-window">
       <div>
-        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <a href="diseases#" title="Close" class="modal-close"><i class="material-icons">clear</i></a>
         <div id="contentGoesHere">
           <h1>DELETE</h1>
         </div>
