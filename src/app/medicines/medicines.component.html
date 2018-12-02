@@ -37,6 +37,12 @@
         <a href="medicines#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
           <h1>NEW</h1>
+          <input [(ngModel)]="medicine.name" type="text" placeholder="Name"><br>
+          <input [(ngModel)]="medicine.price" type="text" placeholder="Price"><br>
+          <input [(ngModel)]="medicine.manufacturer" type="text" placeholder="Manufacturer"><br>
+          <a href="medicines#">
+            <button  (click)="addMedicine()">Add medicine</button>
+          </a>
         </div>
       </div>
     </div>
@@ -46,6 +52,16 @@
         <a href="medicines#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
           <h1>EDIT</h1>
+          <select #toBeEdited>
+            <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
+          </select><br>
+          <button (click)="selectMedicine(toBeEdited.value)">Select medicine</button><br>
+          <div *ngIf="selectedMedicine.name">
+            <input [(ngModel)]="selectedMedicine.name" type="text"/><br /><br />
+            <input [(ngModel)]="selectedMedicine.price" type="text"/><br /><br />
+            <input [(ngModel)]="selectedMedicine.manufacturer" type="text"/><br /><br />
+            <button (click)="editMedicine()">Edit medicine</button>
+          </div>
         </div>
       </div>
     </div>
@@ -78,6 +94,12 @@
         <a href="medicines#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
           <h1>DELETE</h1>
+          <select #toBeDeleted>
+              <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
+          </select><br>
+          <a href="medicines#">
+            <button (click)="deleteMedicine(toBeDeleted.value)">Delete medicine</button>
+          </a>
         </div>
       </div>
     </div>
