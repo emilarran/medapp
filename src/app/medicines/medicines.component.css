@@ -94,3 +94,19 @@ a:hover{
 #mainContent .btn-Delete:hover{
   background-color:#AD1D1D;
 }
+
+table {
+  border: black;
+}
+
+th {
+  background-color: lightblue;
+}
+
+th:hover {
+  background-color: yellow;
+}
+
+.tableheader {
+  background-color: green;
+}

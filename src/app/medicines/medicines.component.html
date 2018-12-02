@@ -1,13 +1,13 @@
 <div id="mainContent">
-  <a class="btn btn-New" href="#open-modal">
+  <a class="btn btn-New" href="medicines#NEW-modal">
     <div class="functionButtons">
       <i class="material-icons">note_add</i>
     </div>
     <div class="functionText">
-      <p>List a New Medicine</p>
+      <p>Create a New Medicine</p>
     </div>
   </a>
-  <a class="btn btn-Edit" href="#open-modal">
+  <a class="btn btn-Edit" href="medicines#EDIT-modal">
     <div class="functionButtons">
       <i class="material-icons">create</i>
     </div>
@@ -15,7 +15,7 @@
       <p>Edit an Existing Medicine</p>
     </div>
   </a>
-    <a class="btn btn-View" href="#open-modal">
+    <a class="btn btn-View" href="medicines#VIEW-modal">
     <div class="functionButtons">
       <i class="material-icons">visibility</i>
     </div>
@@ -23,7 +23,7 @@
       <p>View Medicines</p>
   </div>
   </a>
-  <a class="btn btn-Delete" href="#open-modal">
+  <a class="btn btn-Delete" href="medicines#DELETE-modal">
     <div class="functionButtons">
       <i class="material-icons">delete</i>
     </div>
@@ -31,13 +31,55 @@
       <p>Delete Medicines</p>
     </div>
   </a>
-
-    <div id="open-modal" class="modal-window">
+<!-- THIS PART IS FOR THE MODALS -->
+    <div id="NEW-modal" class="modal-window">
       <div>
-        <a href="#" title="Close" class="modal-close">Close</a>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
-          <h1>This is where you place your tables or forms</h1>
+          <h1>NEW</h1>
         </div>
       </div>
     </div>
+
+    <div id="EDIT-modal" class="modal-window">
+      <div>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>EDIT</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="VIEW-modal" class="modal-window">
+      <div>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>VIEW</h1>
+          <table>
+            <tr>
+                <th class="tableheader">ID</th>
+                <th class="tableheader">Name</th>
+                <th class="tableheader">Price</th>
+                <th class="tableheader">Manufacturer</th>
+            </tr>
+            <tr *ngFor="let medicine of medicines">
+              <th>{{medicine.id}}</th>
+              <th>{{medicine.name}}</th>
+              <th>{{medicine.price}}</th>
+              <th>{{medicine.manufacturer}}</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="DELETE-modal" class="modal-window">
+      <div>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>DELETE</h1>
+        </div>
+      </div>
+    </div>
+<!-- THIS IS THE ENDING FOR THE MODALS -->
 </div>

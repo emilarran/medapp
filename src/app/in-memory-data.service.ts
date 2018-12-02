@@ -17,13 +17,15 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const medicines = [
-      { id: 1, name: 'Biogesic', price: 10, manufacturer: 'ImongMamaCorp' },
-      { id: 2, name: 'Ventolin', price: 15, manufacturer: 'ImongMamaCorp' },
+      { id: 1, name: 'Biogesic', price: 10.00, manufacturer: 'ImongMamaCorp' },
+      { id: 2, name: 'Ventolin', price: 15.50, manufacturer: 'ImongMamaCorp' },
+      { id: 3, name: 'Alaxan FR', price: 21.25, manufacturer: 'ImongMamaCorp' },
+      { id: 4, name: 'Decolgen', price: 13.75, manufacturer: 'ImongMamaCorp' },
     ];
 
     const diseases = [
-      { id: 1, name: 'Cough'},
-      { id: 2, name: 'Headache'},
+      { id: 1, name: 'Cough', medicines: [medicines[1], medicines[3]] },
+      { id: 2, name: 'Headache', medicines: [medicines[0], medicines[2]] },
     ];
 
     const medicalrecords = [
