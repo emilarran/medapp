@@ -1,18 +1,22 @@
-.material-icons{
-    font-size:3em;
-}
-
 .functionButtons{
     float:left;
-    height:100%;
+    display:inline-block;
+    vertical-align: middle;
 }
+
+.material-icons{
+    font-size:3em;
+    vertical-align: middle;
+}
+
 .functionText{
     float:left;
-    display:flex;
+    display:inline-block;
     margin-left:3em;
+    vertical-align: middle;
 }
 .functionText p{
-    font-size: 2em;
+    font-size: 3.5vh;
 }
 a {
     font-family: 'Fira Sans', sans-serif;
@@ -20,7 +24,7 @@ a {
     background-color: #263047;
     border: none;
     color: white;
-    padding: 10px;
+    padding:20px;
     text-decoration: none;
     cursor: pointer;
 }
@@ -41,7 +45,7 @@ a:hover{
 #mainContent{
     display:grid;
     grid-template-columns: auto;
-    min-width: 70%
+    vertical-align:middle;
 }
 #mainContent button{
     border:none;
