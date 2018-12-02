@@ -9,12 +9,22 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MedicalrecordsComponent } from './medicalrecords/medicalrecords.component';
+import { PatientsComponent } from './patients/patients.component';
+import { DoctorsComponent } from './doctors/doctors.component';
+import { MedicinesComponent } from './medicines/medicines.component';
+import { DiseasesComponent } from './diseases/diseases.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    MedicalrecordsComponent,
+    PatientsComponent,
+    DoctorsComponent,
+    MedicinesComponent,
+    DiseasesComponent
   ],
   imports: [
     BrowserModule,

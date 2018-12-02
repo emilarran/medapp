@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'Med App';
 
   isLoggedIn = true;
+
+  logOut(): void {
+      this.isLoggedIn = false;
+  }
 }
