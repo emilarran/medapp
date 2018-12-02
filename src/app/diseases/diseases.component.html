@@ -88,7 +88,7 @@
     <div id="DELETE-modal" class="modal-window">
       <div>
         <a href="diseases#" title="Close" class="modal-close"><i class="material-icons">clear</i></a>
-        <div id="contentGoesHere">
+        <div id="contentGoesHere" style="display:grid; grid-template-columns: auto;">
           <h1>DELETE</h1>
           <select #toBeDeleted>
               <option *ngFor="let disease of diseases; let i = index" value="{{i}}">{{disease.name}}</option>
