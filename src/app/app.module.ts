@@ -8,6 +8,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
         InMemoryDataService, {dataEncapsulation: false}
-    )
+    ),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
