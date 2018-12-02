@@ -83,6 +83,10 @@
         <a href="diseases#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
           <h1>DELETE</h1>
+          <select #toBeDeleted>
+              <option *ngFor="let disease of diseases; let i = index" value="{{i}}">{{disease.name}}</option>
+          </select><br>
+          <button (click)="deleteDisease(toBeDeleted.value)">Delete disease</button>
         </div>
       </div>
     </div>

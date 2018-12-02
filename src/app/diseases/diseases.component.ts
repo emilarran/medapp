@@ -50,4 +50,10 @@ export class DiseasesComponent implements OnInit {
     this.disease.name = null;
     this.disease.medicines = [];
   }
+
+  deleteDisease(index: number): void {
+    let toBeDeleted = this.diseases[index];
+    this.diseases = this.diseases.filter(h => h !== toBeDeleted);
+    this.medService.deleteDisease(toBeDeleted).subscribe();
+  }
 }
