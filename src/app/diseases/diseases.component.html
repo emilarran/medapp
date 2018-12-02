@@ -53,14 +53,14 @@
     <div id="EDIT-modal" class="modal-window">
       <div>
         <a href="diseases#" title="Close" class="modal-close"><i class="material-icons">clear</i></a>
-        <div id="contentGoesHere">
+        <div id="contentGoesHere" style="display:grid; grid-template-columns: auto;">
           <h1>EDIT</h1>
           <select #toBeEdited>
             <option *ngFor="let disease of diseases; let i = index" value="{{i}}">{{disease.name}}</option>
           </select><br>
           <button (click)="selectDisease(toBeEdited.value)">Select disease</button><br>
           <div *ngIf="selectedDisease.name">
-            <input [(ngModel)]="selectedDisease.name" type="text"><br>
+            <input [(ngModel)]="selectedDisease.name" type="text"/><br /><br />
             <select #newMedicine>
               <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
           </select><br><br>
