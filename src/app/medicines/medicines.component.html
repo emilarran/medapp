@@ -4,7 +4,7 @@
       <i class="material-icons">note_add</i>
     </div>
     <div class="functionText">
-      <p>Create a New Medicine</p>
+      <p>Register a New Medicine</p>
     </div>
   </a>
   <a class="btn btn-Edit" href="medicines#EDIT-modal">
@@ -12,7 +12,7 @@
       <i class="material-icons">create</i>
     </div>
     <div class="functionText">
-      <p>Edit an Existing Medicine</p>
+      <p>Update an Existing Medicine</p>
     </div>
   </a>
     <a class="btn btn-View" href="medicines#VIEW-modal">
@@ -20,7 +20,7 @@
       <i class="material-icons">visibility</i>
     </div>
     <div class="functionText">
-      <p>View Medicines</p>
+      <p>List Medicines</p>
   </div>
   </a>
   <a class="btn btn-Delete" href="medicines#DELETE-modal">
@@ -41,7 +41,7 @@
           <input [(ngModel)]="medicine.price" type="text" placeholder="Price"><br>
           <input [(ngModel)]="medicine.manufacturer" type="text" placeholder="Manufacturer"><br>
           <a href="medicines#">
-            <button  (click)="addMedicine()">Add medicine</button>
+            <button  (click)="addMedicine()">Register medicine</button>
           </a>
         </div>
       </div>
@@ -51,7 +51,7 @@
       <div>
         <a href="medicines#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
-          <h1>EDIT</h1>
+          <h1>UPDATE</h1>
           <select #toBeEdited>
             <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
           </select><br>
@@ -60,7 +60,7 @@
             <input [(ngModel)]="selectedMedicine.name" type="text"/><br /><br />
             <input [(ngModel)]="selectedMedicine.price" type="text"/><br /><br />
             <input [(ngModel)]="selectedMedicine.manufacturer" type="text"/><br /><br />
-            <button (click)="editMedicine()">Edit medicine</button>
+            <button (click)="editMedicine()">Update medicine</button>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
       <div>
         <a href="medicines#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
-          <h1>VIEW</h1>
+          <h1>LIST</h1>
           <table>
             <tr>
                 <th class="tableheader">ID</th>

@@ -1,3 +1,89 @@
-<p>
-  medicalrecords works!
-</p>
+<div id="mainContent">
+  <a class="btn btn-New" href="medicalrecords#NEW-modal">
+    <div class="functionButtons">
+      <i class="material-icons">note_add</i>
+    </div>
+    <div class="functionText">
+      <p>Register a New Medical Record</p>
+    </div>
+  </a>
+  <a class="btn btn-Edit" href="medicalrecords#EDIT-modal">
+    <div class="functionButtons">
+      <i class="material-icons">create</i>
+    </div>
+    <div class="functionText">
+      <p>Update an Existing Medical Record</p>
+    </div>
+  </a>
+    <a class="btn btn-View" href="medicalrecords#VIEW-modal">
+    <div class="functionButtons">
+      <i class="material-icons">visibility</i>
+    </div>
+    <div class="functionText">
+      <p>List Medical Records</p>
+  </div>
+  </a>
+  <a class="btn btn-Delete" href="medicalrecords#DELETE-modal">
+    <div class="functionButtons">
+      <i class="material-icons">delete</i>
+    </div>
+    <div class="functionText">
+      <p>Delete Medical Records</p>
+    </div>
+  </a>
+<!-- THIS PART IS FOR THE MODALS -->
+    <div id="NEW-modal" class="modal-window">
+      <div>
+        <a href="medicalrecords#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>NEW</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="EDIT-modal" class="modal-window">
+      <div>
+        <a href="medicalrecords#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>UPDATE</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="VIEW-modal" class="modal-window">
+      <div>
+        <a href="medicalrecords#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>LIST</h1>
+          <table>
+            <tr>
+                <th class="tableheader">ID</th>
+                <th class="tableheader">Patient</th>
+                <th class="tableheader">Doctor</th>
+                <th class="tableheader">Disease</th>
+                <th class="tableheader">Medicine</th>
+                <th class="tableheader">Total Bill</th>
+            </tr>
+            <tr *ngFor="let medicalrecord of medicalrecords">
+              <td>{{medicalrecord.id}}</td>
+              <td>{{medicalrecord.patient.lastname}}, {{medicalrecord.patient.firstname}}</td>
+              <td>{{medicalrecord.doctor.lastname}}, {{medicalrecord.doctor.firstname}}</td>
+              <td>{{medicalrecord.disease.name}}</td>
+              <td>{{medicalrecord.medicine.name}}</td>
+              <td>{{medicalrecord.totalBill}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="DELETE-modal" class="modal-window">
+      <div>
+        <a href="medicalrecords#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>DELETE</h1>
+        </div>
+      </div>
+    </div>
+<!-- THIS IS THE ENDING FOR THE MODALS -->
+</div>
