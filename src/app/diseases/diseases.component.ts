@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MedService } from '../med.service';
 import { Disease } from '../disease';
 import { Medicine } from '../medicine';
+import { Observable, Subject } from 'rxjs';
+import {
+   debounceTime, distinctUntilChanged, switchMap
+ } from 'rxjs/operators';
 
 @Component({
   selector: 'app-diseases',
@@ -26,6 +30,14 @@ export class DiseasesComponent implements OnInit {
   ngOnInit() {
       this.getDiseases();
       this.getMedicines();
+      this.diseaseSearch$ = this.searchTerms.pipe(
+        // wait 300ms after each keystroke before considering the term
+        debounceTime(300),
+        // ignore new term if same as previous term
+        distinctUntilChanged(),
+        // switch to new search observable each time the term changes
+        switchMap((term: string) => this.medService.searchDiseases(term)),
+      );
   }
 
   disease: Disease = {
@@ -71,5 +83,13 @@ export class DiseasesComponent implements OnInit {
     this.selectedDisease.medicines.pop();
     this.selectedDisease.medicines.push(this.medicines[index]);
     this.medService.updateDisease(this.selectedDisease).subscribe();
+  }
+
+  diseaseSearch$: Observable<Disease[]>;
+
+  private searchTerms = new Subject<string>();
+
+  search(term: string): void {
+    this.searchTerms.next(term);
   }
 }

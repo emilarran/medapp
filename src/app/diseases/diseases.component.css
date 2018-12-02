@@ -120,6 +120,14 @@
   background-color:#AD1D1D;
 }
 
+#mainContent .btn-Search{
+  background-color: pink;
+}
+
+#mainContent .btn-Search:hover{
+  background-color: pink;
+}
+
 table {
   border: black;
 }

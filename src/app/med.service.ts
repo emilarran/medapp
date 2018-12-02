@@ -157,6 +157,15 @@ export class MedService {
     );
   }
 
+  searchDiseases(term: string): Observable<Disease[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Disease[]>(`${this.diseasesUrl}/?name=${term}`).pipe(
+      catchError(this.handleError<Disease[]>('searchDiseases', []))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
