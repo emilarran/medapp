@@ -4,7 +4,7 @@
       <i class="material-icons">note_add</i>
     </div>
     <div class="functionText">
-      <p>Create a New Disease</p>
+      <p>Register a New Disease</p>
     </div>
   </a>
   <a class="btn btn-Edit" href="diseases#EDIT-modal">
@@ -12,7 +12,7 @@
       <i class="material-icons">create</i>
     </div>
     <div class="functionText">
-      <p>Edit an Existing Disease</p>
+      <p>Update an Existing Disease</p>
     </div>
   </a>
     <a class="btn btn-View" href="diseases#VIEW-modal">
@@ -20,7 +20,7 @@
       <i class="material-icons">visibility</i>
     </div>
     <div class="functionText">
-      <p>View Diseases</p>
+      <p>List Diseases</p>
   </div>
   </a>
   <a class="btn btn-Delete" href="diseases#DELETE-modal">
@@ -46,13 +46,13 @@
           <i class="material-icons">clear</i>
         </a>
         <div id="contentGoesHere" style="display:grid; grid-template-columns: auto;">
-          <h1>NEW</h1>
+          <h1>REGISTER</h1>
           <input [(ngModel)]="disease.name" type="text" placeholder="Name"><br>
           <select #selectMedicine>
               <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
           </select><br>
           <a href="diseases#">
-            <button  (click)="addDisease(selectMedicine.value)">Add disease</button>
+            <button  (click)="addDisease(selectMedicine.value)">Register disease</button>
           </a>
         </div>
       </div>
@@ -62,7 +62,7 @@
       <div>
         <a href="diseases#" title="Close" class="modal-close"><i class="material-icons">clear</i></a>
         <div id="contentGoesHere" style="display:grid; grid-template-columns: auto;">
-          <h1>EDIT</h1>
+          <h1>UPDATE</h1>
           <select #toBeEdited>
             <option *ngFor="let disease of diseases; let i = index" value="{{i}}">{{disease.name}}</option>
           </select><br>
@@ -72,7 +72,7 @@
             <select #newMedicine>
               <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
           </select><br><br>
-            <button (click)="editDisease(newMedicine.value)">Edit disease</button>
+            <button (click)="editDisease(newMedicine.value)">Update disease</button>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
       <div>
         <a href="diseases#" title="Close" class="modal-close"><i class="material-icons">clear</i></a>
         <div id="contentGoesHere">
-          <h1>VIEW</h1>
+          <h1>LIST</h1>
           <table>
             <tr>
                 <th class="tableheader">ID</th>
