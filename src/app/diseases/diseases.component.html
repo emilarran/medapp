@@ -34,12 +34,7 @@
 <!-- THIS PART IS FOR THE MODALS -->
     <div id="NEW-modal" class="modal-window">
       <div>
-        <a 
-          href="diseases#" 
-          title="Close" 
-          class="modal-close" 
-          (click)="resetDisease()"
-        >
+        <a href="diseases#" title="Close" class="modal-close" (click)="resetDisease()">
           <i class="material-icons">clear</i>
         </a>
         <div id="contentGoesHere" style="display:grid; grid-template-columns: auto;">
@@ -48,7 +43,9 @@
           <select #selectMedicine>
               <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
           </select><br>
-          <button (click)="addDisease(selectMedicine.value)">Add disease</button>
+          <a href="diseases#">
+            <button  (click)="addDisease(selectMedicine.value)">Add disease</button>
+          </a>
         </div>
       </div>
     </div>
@@ -93,7 +90,9 @@
           <select #toBeDeleted>
               <option *ngFor="let disease of diseases; let i = index" value="{{i}}">{{disease.name}}</option>
           </select><br>
-          <button (click)="deleteDisease(toBeDeleted.value)">Delete disease</button>
+          <a href="diseases#">
+            <button (click)="deleteDisease(toBeDeleted.value)">Delete disease</button>
+          </a>
         </div>
       </div>
     </div>
