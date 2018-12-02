@@ -4,47 +4,7 @@
   </div>
   <app-navbar [(isLoggedIn)]="isLoggedIn" *ngIf="isLoggedIn"></app-navbar>
   <div id="mainContent" *ngIf="isLoggedIn">
-    <a class="btn btn-New" href="#open-modal">
-      <div class="functionButtons">
-        <i class="material-icons">note_add</i>
-      </div>
-      <div class="functionText">
-        <p>Create a New Record</p>
-      </div>
-    </a>
-    <a class="btn btn-Edit" href="#open-modal">
-      <div class="functionButtons">
-        <i class="material-icons">create</i>
-      </div>
-      <div class="functionText">
-        <p>Edit an existing Record</p>
-      </div>
-    </a>
-    <a class="btn btn-View" href="#open-modal">
-      <div class="functionButtons">
-        <i class="material-icons">visibility</i>
-      </div>
-      <div class="functionText">
-        <p>View Records</p>
-      </div>
-    </a>
-    <a class="btn btn-Delete" href="#open-modal">
-      <div class="functionButtons">
-        <i class="material-icons">delete</i>
-      </div>
-      <div class="functionText">
-        <p>Delete Records</p>
-      </div>
-    </a>
-
-    <div id="open-modal" class="modal-window">
-      <div>
-        <a href="#" title="Close" class="modal-close">Close</a>
-        <div id="contentGoesHere">
-          <h1>This is where you place your tables or forms</h1>
-        </div>
-      </div>
-    </div>
+    <router-outlet></router-outlet>
   </div>
   <app-login [(isLoggedIn)]="isLoggedIn" *ngIf="!isLoggedIn"></app-login>
 </div>
