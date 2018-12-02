@@ -56,4 +56,20 @@ export class DiseasesComponent implements OnInit {
     this.diseases = this.diseases.filter(h => h !== toBeDeleted);
     this.medService.deleteDisease(toBeDeleted).subscribe();
   }
+
+  selectedDisease: Disease = {
+    id: null,
+    name: null,
+    medicines: []
+  };
+
+  selectDisease(index: number): void {
+    this.selectedDisease = this.diseases[index];
+  }
+
+  editDisease(index: number): void {
+    this.selectedDisease.medicines.pop();
+    this.selectedDisease.medicines.push(this.medicines[index]);
+    this.medService.updateDisease(this.selectedDisease).subscribe();
+  }
 }
