@@ -18,7 +18,7 @@
 .functionText p{
     font-size: 3.5vh;
 }
-a {
+#mainContent .btn{
     font-family: 'Fira Sans', sans-serif;
     text-align: center;
     background-color: #263047;
@@ -28,7 +28,7 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
-a:hover{
+#mainContent .btn:hover{
     background-color: #3D4E72;
 }
 #wrapper{
@@ -61,6 +61,35 @@ a:hover{
   font-weight: bold;
   color:white;
   width:100%;
+}
+
+#contentGoesHere{
+  display:grid; 
+  grid-template-columns: auto;
+}
+
+#contentGoesHere input{
+  background-color:#171D2B;
+  color:#fff;
+  text-decoration: none;
+  border:none;
+  padding:10px;
+}
+
+#contentGoesHere select{
+  padding:10px;
+}
+
+#contentGoesHere table{
+  width:100%;
+  padding:20px;
+  font-weight: bold;
+}
+
+#contentGoesHere td,th{
+  border:1px solid #000000;
+  text-align:left;
+  padding:10px;
 }
 
 #mainContent .btn-New{
