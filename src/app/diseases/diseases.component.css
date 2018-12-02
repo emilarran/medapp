@@ -95,3 +95,14 @@ a:hover{
   background-color:#AD1D1D;
 }
 
+table {
+  border: black;
+}
+
+td {
+  background-color: lightblue;
+}
+
+td:hover {
+  background-color: yellow;
+}

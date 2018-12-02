@@ -4,7 +4,7 @@
       <i class="material-icons">note_add</i>
     </div>
     <div class="functionText">
-      <p>Create a New Record</p>
+      <p>Create a New Disease</p>
     </div>
   </a>
   <a class="btn btn-Edit" href="diseases#EDIT-modal">
@@ -12,7 +12,7 @@
       <i class="material-icons">create</i>
     </div>
     <div class="functionText">
-      <p>Edit an existing Record</p>
+      <p>Edit an Existing Disease</p>
     </div>
   </a>
     <a class="btn btn-View" href="diseases#VIEW-modal">
@@ -20,7 +20,7 @@
       <i class="material-icons">visibility</i>
     </div>
     <div class="functionText">
-      <p>View Records</p>
+      <p>View Diseases</p>
   </div>
   </a>
   <a class="btn btn-Delete" href="diseases#DELETE-modal">
@@ -28,15 +28,20 @@
       <i class="material-icons">delete</i>
     </div>
     <div class="functionText">
-      <p>Delete Records</p>
+      <p>Delete Diseases</p>
     </div>
   </a>
 <!-- THIS PART IS FOR THE MODALS -->
     <div id="NEW-modal" class="modal-window">
       <div>
-        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <a href="diseases#" title="Close" class="modal-close" (click)="resetDisease()">Close</a>
         <div id="contentGoesHere">
           <h1>NEW</h1>
+          <input [(ngModel)]="disease.name" type="text" placeholder="Name"><br>
+          <select #selectMedicine>
+              <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
+          </select><br>
+          <button (click)="addDisease(selectMedicine.value)">Add disease</button>
         </div>
       </div>
     </div>
@@ -55,6 +60,20 @@
         <a href="diseases#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
           <h1>VIEW</h1>
+          <table>
+            <tr>
+                <th class="tableheader">ID</th>
+                <th class="tableheader">Name</th>
+                <th  class="tableheader">Medicines</th>
+            </tr>
+            <tr *ngFor="let disease of diseases">
+              <td>{{disease.id}}</td>
+              <td>{{disease.name}}</td>
+              <td>
+                 <p *ngFor="let medicine of disease.medicines">{{medicine.name}}</p> 
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>

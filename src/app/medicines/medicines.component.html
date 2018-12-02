@@ -1,3 +1,85 @@
-<p>
-  medicines works!
-</p>
+<div id="mainContent">
+  <a class="btn btn-New" href="medicines#NEW-modal">
+    <div class="functionButtons">
+      <i class="material-icons">note_add</i>
+    </div>
+    <div class="functionText">
+      <p>Create a New Medicine</p>
+    </div>
+  </a>
+  <a class="btn btn-Edit" href="medicines#EDIT-modal">
+    <div class="functionButtons">
+      <i class="material-icons">create</i>
+    </div>
+    <div class="functionText">
+      <p>Edit an Existing Medicine</p>
+    </div>
+  </a>
+    <a class="btn btn-View" href="medicines#VIEW-modal">
+    <div class="functionButtons">
+      <i class="material-icons">visibility</i>
+    </div>
+    <div class="functionText">
+      <p>View Medicines</p>
+  </div>
+  </a>
+  <a class="btn btn-Delete" href="medicines#DELETE-modal">
+    <div class="functionButtons">
+      <i class="material-icons">delete</i>
+    </div>
+    <div class="functionText">
+      <p>Delete Medicines</p>
+    </div>
+  </a>
+<!-- THIS PART IS FOR THE MODALS -->
+    <div id="NEW-modal" class="modal-window">
+      <div>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>NEW</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="EDIT-modal" class="modal-window">
+      <div>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>EDIT</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="VIEW-modal" class="modal-window">
+      <div>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>VIEW</h1>
+          <table>
+            <tr>
+                <th class="tableheader">ID</th>
+                <th class="tableheader">Name</th>
+                <th class="tableheader">Price</th>
+                <th class="tableheader">Manufacturer</th>
+            </tr>
+            <tr *ngFor="let medicine of medicines">
+              <td>{{medicine.id}}</td>
+              <td>{{medicine.name}}</td>
+              <td>{{medicine.price}}</td>
+              <td>{{medicine.manufacturer}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="DELETE-modal" class="modal-window">
+      <div>
+        <a href="medicines#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>DELETE</h1>
+        </div>
+      </div>
+    </div>
+<!-- THIS IS THE ENDING FOR THE MODALS -->
+</div>
