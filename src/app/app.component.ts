@@ -13,4 +13,5 @@ export class AppComponent {
   logOut(): void {
       this.isLoggedIn = false;
   }
+
 }
