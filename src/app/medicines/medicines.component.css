@@ -99,14 +99,10 @@ table {
   border: black;
 }
 
-th {
+td {
   background-color: lightblue;
 }
 
-th:hover {
+td:hover {
   background-color: yellow;
-}
-
-.tableheader {
-  background-color: green;
 }

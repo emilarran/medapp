@@ -34,9 +34,14 @@
 <!-- THIS PART IS FOR THE MODALS -->
     <div id="NEW-modal" class="modal-window">
       <div>
-        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <a href="diseases#" title="Close" class="modal-close" (click)="resetDisease()">Close</a>
         <div id="contentGoesHere">
           <h1>NEW</h1>
+          <input [(ngModel)]="disease.name" type="text" placeholder="Name"><br>
+          <select #selectMedicine>
+              <option *ngFor="let medicine of medicines; let i = index" value="{{i}}">{{medicine.name}}</option>
+          </select><br>
+          <button (click)="addDisease(selectMedicine.value)">Add disease</button>
         </div>
       </div>
     </div>
@@ -62,11 +67,11 @@
                 <th  class="tableheader">Medicines</th>
             </tr>
             <tr *ngFor="let disease of diseases">
-              <th>{{disease.id}}</th>
-              <th>{{disease.name}}</th>
-              <th>
+              <td>{{disease.id}}</td>
+              <td>{{disease.name}}</td>
+              <td>
                  <p *ngFor="let medicine of disease.medicines">{{medicine.name}}</p> 
-              </th>
+              </td>
             </tr>
           </table>
         </div>
