@@ -1,5 +1,5 @@
 <div id="mainContent">
-  <a class="btn btn-New" href="#open-modal">
+  <a class="btn btn-New" href="diseases#NEW-modal">
     <div class="functionButtons">
       <i class="material-icons">note_add</i>
     </div>
@@ -7,7 +7,7 @@
       <p>Create a New Record</p>
     </div>
   </a>
-  <a class="btn btn-Edit" href="#open-modal">
+  <a class="btn btn-Edit" href="diseases#EDIT-modal">
     <div class="functionButtons">
       <i class="material-icons">create</i>
     </div>
@@ -15,7 +15,7 @@
       <p>Edit an existing Record</p>
     </div>
   </a>
-    <a class="btn btn-View" href="#open-modal">
+    <a class="btn btn-View" href="diseases#VIEW-modal">
     <div class="functionButtons">
       <i class="material-icons">visibility</i>
     </div>
@@ -23,7 +23,7 @@
       <p>View Records</p>
   </div>
   </a>
-  <a class="btn btn-Delete" href="#open-modal">
+  <a class="btn btn-Delete" href="diseases#DELETE-modal">
     <div class="functionButtons">
       <i class="material-icons">delete</i>
     </div>
@@ -31,13 +31,41 @@
       <p>Delete Records</p>
     </div>
   </a>
-
-    <div id="open-modal" class="modal-window">
+<!-- THIS PART IS FOR THE MODALS -->
+    <div id="NEW-modal" class="modal-window">
       <div>
-        <a href="#" title="Close" class="modal-close">Close</a>
+        <a href="diseases#" title="Close" class="modal-close">Close</a>
         <div id="contentGoesHere">
-          <h1>This is where you place your tables or forms</h1>
+          <h1>NEW</h1>
         </div>
       </div>
     </div>
+
+    <div id="EDIT-modal" class="modal-window">
+      <div>
+        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>EDIT</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="VIEW-modal" class="modal-window">
+      <div>
+        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>VIEW</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="DELETE-modal" class="modal-window">
+      <div>
+        <a href="diseases#" title="Close" class="modal-close">Close</a>
+        <div id="contentGoesHere">
+          <h1>DELETE</h1>
+        </div>
+      </div>
+    </div>
+<!-- THIS IS THE ENDING FOR THE MODALS -->
 </div>
